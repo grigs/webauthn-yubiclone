@@ -29,71 +29,55 @@
 <body>
     <div class="base">
         <div class="content">
-            <div class="header-logo visible-desktop">
-                <a href="http://webauthn.org/" title="WebAuthn"><img src="/webauthn-logo.png" alt="WebAuthn"></a>
-            </div>
-            <h1>Grigs WebAuthn Demo</h1>
-            <p>This demo will let you create a user and register using WebAuthn, then authenticate yourself without a password.</p>
-            <p>Start by registering a user, then try logging in.</p>
-            <p><a class="github-button" href="https://github.com/apowers313/fido2-server-demo/" data-size="large" aria-label="View apowers313/fido2-server-demo on GitHub">View the Source</a></p>
-            <br>
+            <h1>Magic Authentication</h1>
             <div class="card card-body bg-light" role="tablist">
 
                 <!-- tab header -->
                 <ul class="nav nav-tabs">
+                  <li class="nav-item">
+                      <a href="?tab=login" class="nav-link active" data-target="#login" data-toggle="tab">Login</a></li>
                     <li class="nav-item">
-                        <a href="?tab=register" class="nav-link active" data-target="#register" data-toggle="tab">Register</a>
+                        <a href="?tab=register" class="nav-link" data-target="#register" data-toggle="tab">Register</a>
                     </li>
-                    <li class="nav-item">
-                        <a href="?tab=login" class="nav-link" data-target="#login" data-toggle="tab">Login</a></li>
                 </ul>
                 <div class="tab-content">
 
                     <!-- register tab -->
-                    <div class="tab-pane fade show active" role="tabpanel" id="register">
+                    <div class="tab-pane fade" role="tabpanel" id="register">
                         <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <h2>Create a New Account</h2>
-                                </div>
-                            </div>
                             <div class="row">
                                 <div class="col-md-6">
                                     <form id="register-form" name="register-form" method="post">
+                                        <label for="username">Username</label>
                                         <br>
-                                        <input type="text" id="username" name="username" placeholder="Username" autofocus="autofocus">
+                                        <input type="text" id="username" name="username" autofocus="autofocus">
                                         <br>
                                         <br>
                                         <input type="submit" id="registerButton" class="btn btn-success" value="Register">
                                     </form>
-                                </div>
-                                <div class="col-md-6">
-                                    <p>Enter a username and click 'next' initialize the WebAuthn registration process. In the next step you will be prompted to register with WebAuthn -- No password required!</p>
                                 </div>
                             </div>
                         </div>
                     </div>
 
                     <!-- login tab -->
-                    <div class="tab-pane fade" role="tabpanel" id="login">
+                    <div class="tab-pane fade show active" role="tabpanel" id="login">
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h2>Log in to Account Using WebAuthn</h2>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
                                     <form id="login-form" name="login-form" method="post">
+                                        <label for="username">Username</label>
                                         <br>
-                                        <input type="text" name="username" placeholder="Username" autofocus="autofocus">
+                                        <input type="text" name="username"  autofocus="autofocus" >
+                                        <br>
+                                        <br>
+                                        <label for="password">Password</label>
+                                        <br>
+                                        <input type="password" name="password" >
                                         <br>
                                         <br>
                                         <input type="submit" id="loginButton" class="btn btn-success" value="Login">
                                     </form>
-                                </div>
-                                <div class="col-md-6">
-                                    <p>If you've completed the registration step, you can authenticate yourself using the form to the left. In the next step your WebAuthn device will be authenticated.</p>
                                 </div>
                             </div>
                         </div>

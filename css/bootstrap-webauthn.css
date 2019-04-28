@@ -197,3 +197,12 @@ a, a:hover {
 #terminal .webauthn {
   color: #f26513;
 }
+
+input {
+  width: 100%;
+}
+
+.content {
+  padding-top: 35px;
+  padding-bottom: 20px;
+}
